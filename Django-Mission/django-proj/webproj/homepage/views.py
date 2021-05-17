@@ -59,3 +59,8 @@ def coffee_delete(request, pk):
     deleting_coffee = CoffeeBeen.objects.get(name=pk)
     deleting_coffee.delete()
     return redirect('/GET/coffees/')
+
+def test(request):
+    name = 'DongIk Jang'
+    content = '템플릿을 써도 되는 지는 모르겠으나 신기해서 한번 사용해봤습니다.'
+    return render(request, 'test.html', {"name" : name, "content" : content})

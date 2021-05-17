@@ -16,15 +16,16 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from homepage.views import index, introduction, coffee_view, coffee_stock, coffee_post, coffee_put, coffee_delete
+from homepage.views import index, introduction, coffee_view, coffee_stock, coffee_post, coffee_put, coffee_delete, test
 
 urlpatterns = [
     path('', index), # 127.0.0.1/
-    path('GET/', introduction), # 127.0.0.1/GET/
+    path('GET/', test), # 127.0.0.1/GET/
     path('coffee/', coffee_view), # 127.0.0.1/coffee/
     path('GET/coffees/', coffee_stock),
     path('POST/coffees/', coffee_post),
     path('PUT/coffees/<str:pk>', coffee_put),
     path('DELETE/coffees/<str:pk>', coffee_delete),
+    path('test/', test),
     path('admin/', admin.site.urls), # 127/0.0.1/admin/
 ]
